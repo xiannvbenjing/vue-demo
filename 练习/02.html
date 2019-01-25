@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+    <style>
+        .red{
+            color: brown;
+        }
+        .bgc{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+   <div id="dv">
+       <ul>
+           <li v-for="(item,index) of user">
+             {{item}}  {{index}}
+           </li>
+       </ul>
+   </div> 
+   <script>
+       new Vue({
+           el:"#dv",
+           data:{
+               user:{
+                   id:1,
+                   name:'金秀贤',
+                   des:'世界上最帅的男人',
+                   price:"买不起"
+               },
+               str:'一夜暴富'
+           }
+       })
+   </script>
+</body>
+</html>

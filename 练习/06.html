@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+<body>
+   <div id="app">
+    des:  <input type="text" v-model="aaa">
+    name:  <input type="text" v-model="bbb">
+    price:  <input type="text" v-model="ccc">
+       <button @click="addData">点击</button>
+
+       <ul>
+           <li v-for="(item,index) in list">
+              {{item.des}}  {{item.name}} {{item.price}}
+            </li>
+       </ul>
+   </div> 
+   <script>
+      new Vue({
+           el:'#app',
+           data:{
+               aaa:'1',
+               bbb:'2',
+               ccc:'3',
+
+               list:[{
+                   des:1,
+                   name:'金秀贤',
+                   price:'300000'
+               }]
+           },
+           methods:{
+               addData(){
+                   var des=this.aaa;
+                   var name=this.bbb;
+                   var price =this.ccc;
+                   this.list.push({des,name,price}) 
+               }
+           }
+       })
+   </script>
+</body>
+</html>
